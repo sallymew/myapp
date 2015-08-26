@@ -2,7 +2,14 @@
   "name": "myapp",
   "version": "1.0.0",
   "description": "React实现手Q游戏大厅首页",
-  "main": "index.js",
+  "browserify": {
+    "transform": [
+      [
+        "reactify"
+      ]
+    ]
+  },
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +27,18 @@
   "bugs": {
     "url": "https://github.com/sallymew/myapp/issues"
   },
-  "homepage": "https://github.com/sallymew/myapp#readme"
+  "homepage": "https://github.com/sallymew/myapp#readme",
+  "devDependencies": {
+    "body-parser": "~1.13.3",
+    "browserify": "~11.0.1",
+    "express": "~4.13.3",
+    "fs": "0.0.2",
+    "http-server": "~0.8.0",
+    "literalify": "~0.4.0",
+    "lodash": "~3.10.1",
+    "path": "~0.11.14",
+    "react": "~0.13.3",
+    "reactify": "~1.1.1",
+    "watchify": "~3.3.1"
+  }
 }
