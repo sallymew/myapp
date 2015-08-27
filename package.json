@@ -5,7 +5,10 @@
   "browserify": {
     "transform": [
       [
-        "reactify"
+        "reactify",
+        {
+          "es6": true
+        }
       ]
     ]
   },
@@ -34,6 +37,7 @@
     "express": "~4.13.3",
     "fs": "0.0.2",
     "http-server": "~0.8.0",
+    "jquery": "~2.1.4",
     "literalify": "~0.4.0",
     "lodash": "~3.10.1",
     "path": "~0.11.14",
