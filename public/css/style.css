@@ -150,7 +150,7 @@ button {
     position: relative;
     display: -webkit-box;
     display: box;
-    margin-left: 15px;
+    padding-left: 15px;
 }
 
 .item-avatar {
