@@ -28957,7 +28957,17 @@ var PlayerList = React.createClass({displayName: "PlayerList",
 var Player  = React.createClass({displayName: "Player",
     render: function() {
         return (
-            React.createElement("div", {className: "list-item"}, "我是一个玩家")
+            React.createElement("div", {className: "list-item"}, 
+                React.createElement("div", {className: "item-avatar"}, 
+                    React.createElement("img", {src: this.props.avatar, alt: "头像", width: "40", height: "40"})
+                ), 
+                React.createElement("div", {className: "item-info"}, 
+                    React.createElement("h4", null, this.props.name), 
+                    React.createElement("p", null, React.createElement("em", null, this.props.platform), "(", this.props.players, "人在玩)"), 
+                    React.createElement("p", null, this.props.slogan)
+                ), 
+                React.createElement("div", {className: "item-join"}, "加入")
+            )
         )
     }
 });

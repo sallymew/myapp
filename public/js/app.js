@@ -26,7 +26,17 @@ var PlayerList = React.createClass({
 var Player  = React.createClass({
     render: function() {
         return (
-            <div className="list-item">我是一个玩家</div>
+            <div className="list-item">
+                <div className="item-avatar">
+                    <img src={this.props.avatar} alt="头像" width="40" height="40"/>
+                </div>
+                <div className="item-info">
+                    <h4>{this.props.name}</h4>
+                    <p><em>{this.props.platform}</em>({this.props.players}人在玩)</p>
+                    <p>{this.props.slogan}</p>
+                </div>
+                <div className="item-join">加入</div>
+            </div>
         )
     }
 });
