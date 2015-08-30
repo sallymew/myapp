@@ -73,12 +73,15 @@
         </ul>
     </div>
 </div>
-<script src="../../lib/sea.js"></script>
+<!--<script src="../../lib/sea.js"></script>-->
+<script src="../node_modules/xscroll/build/standalone/xscroll.js"></script>
+<script src="../node_modules/xscroll/build/standalone/plugins/lazyload.js"></script>
+<script src="../node_modules/xscroll/build/standalone/plugins/infinite.js"></script>
 <script>
-    seajs.config({
-        base: "../../build/cmd"
-    })
-    seajs.use(["xscroll","plugins/infinite","plugins/lazyload"],function(XScroll,Infinite,LazyLoad){
+//    seajs.config({
+//        base: "../../build/cmd"
+//    })
+//    seajs.use(["xscroll","plugins/infinite","plugins/lazyload"],function(XScroll,Infinite,LazyLoad){
         var imgs = [
             'http://a3.mzstatic.com/us/r30/Purple4/v4/8f/4e/a1/8f4ea103-feb8-cd51-a294-8479b9fd2243/icon160x160.jpeg',
             'http://a3.mzstatic.com/us/r30/Purple5/v4/d5/5d/2a/d55d2a51-f0d9-3888-3d57-95075c3a52db/icon160x160.jpeg',
@@ -171,7 +174,7 @@
 
         xscroll.render();
 
-        var infinite = new Infinite({
+        var infinite = new XScroll.Plugins.Infinite({
             infiniteElements:"#J_Scroll .xs-row",
             renderHook:function(el,row){
                 if(row.recycled){
@@ -190,7 +193,7 @@
 
         xscroll.plug(infinite);
 
-        var lazyload = new LazyLoad({
+        var lazyload = new XScroll.Plugins.LazyLoad({
             imgsSelector:".lazyload",
             imgSetter:function(img){
                 var src = img.getAttribute("data-src");
@@ -209,7 +212,7 @@
 
 
 
-    });
+//    });
 
 </script>
 </body>
