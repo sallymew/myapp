@@ -17,11 +17,32 @@ body {
     height: 100%;
 }
 
+#J_Scroll{
+    position: absolute;
+    top:0;
+    bottom: 0;
+    width:100%;
+    overflow:auto;
+}
+#J_Scroll ul{
+    width: 100%;
+}
+#J_Scroll ul li.xs-row{
+    width: 100%;
+    display: block;
+    height: 68px;
+}
+.xs-container{
+    width: 100%;
+}
+
+.lazyload {
+    background-color: #f7f7f7;
+    background-size: 40px 40px;
+}
+
 img {
     display: block;
-}
-#container {
-    /*display: none;*/
 }
 
 #searchContainer{
@@ -115,7 +136,6 @@ button {
     height: 45px;
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
-    margin-top: 10px;
     /*border-top: #e0e0e0 1px solid;*/
     border-bottom: #e0e0e0 1px solid;
     background-image: none;
@@ -209,28 +229,4 @@ p {
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-}
-
-#J_Scroll{
-    position: absolute;
-    top:0;
-    bottom: 0;
-    width:100%;
-    overflow:auto;
-}
-#J_Scroll ul{
-    width: 100%;
-}
-#J_Scroll ul li.xs-row{
-    width: 100%;
-    display: block;
-    height: 68px;
-}
-.xs-container{
-    width: 100%;
-}
-
-.lazyload {
-    background-color: #f7f7f7;
-    background-size: 40px 40px;
 }
