@@ -1,11 +1,15 @@
 var React = require('react'),
     Jquery = require('jquery');
+var XScroll = require('xscroll/dist/xscroll');
+var Util = require('xscroll/dist/util');
+var Infinite = require('xscroll/dist/plugins/infinite');
+var LazyLoad = require('xscroll/dist/plugins/lazyload');
 
 var PlayerList = React.createClass({
     render: function() {
         var playerNodes = this.props.data.map(function(player, index){
             return (
-                <Player avatar={player.avatar} name={player.name} platform={player.platform} players={player.players} slogan={player.slogan} />
+                <Player avatar={player.avatar} name={player.name} platform={player.platform} players={player.players} slogan={player.slogan} key={index}/>
             );
         });
         return (
@@ -28,7 +32,7 @@ var Player  = React.createClass({
         return (
             <div className="list-item">
                 <div className="item-avatar">
-                    <img src={this.props.avatar} alt="头像" width="40" height="40"/>
+                    <img className="lazyload" src={this.props.avatar} width="40" height="40"/>
                 </div>
                 <div className="item-info">
                     <h4>{this.props.name}</h4>
@@ -62,26 +66,27 @@ var Page = React.createClass({
     },
     render: function() {
         return (
-            <div id="content">
-                <div id="searchContainer">
-                    <div id="searchContent">
-                        <span id="search">请输入公会ID</span>
+            <div>
+                <div id="head">
+                    <div id="searchContainer">
+                        <div id="searchContent">
+                            <span id="search">请输入公会ID</span>
+                        </div>
                     </div>
-                </div>
-                <div id="banner"></div>
-                <h3>
-                    已有<em>{this.state.num}</em>个公会入驻，累计<em>{this.state.player}</em>位玩家
-                </h3>
-                <div id="statusImg">
-                    <button id="joinBtn"></button>
-                    <button id="createBtn"></button>
+                    <div id="banner"></div>
+                    <h3>
+                        已有<em>{this.state.num}</em>个公会入驻，累计<em>{this.state.player}</em>位玩家
+                    </h3>
+                    <div id="statusImg">
+                        <button id="joinBtn"></button>
+                        <button id="createBtn"></button>
+                    </div>
                 </div>
                 <PlayerList data={this.state.data}/>
             </div>
         )
     }
 });
-
 React.render(
     <Page url="playerList.json"/>,
     document.getElementById('container')

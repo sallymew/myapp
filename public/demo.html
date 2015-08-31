@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>simple</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
 <style type="text/css">
@@ -74,9 +75,9 @@
     </div>
 </div>
 <!--<script src="../../lib/sea.js"></script>-->
-<script src="../node_modules/xscroll/build/standalone/xscroll.js"></script>
-<script src="../node_modules/xscroll/build/standalone/plugins/lazyload.js"></script>
-<script src="../node_modules/xscroll/build/standalone/plugins/infinite.js"></script>
+<script src="build/xscroll.min.js"></script>
+<script src="build/lazyload.min.js"></script>
+<script src="build/infinite.min.js"></script>
 <script>
 //    seajs.config({
 //        base: "../../build/cmd"
@@ -149,7 +150,7 @@
             var tmp = [{
                 data:{},
                 style:{
-                    height:400,width: "100%",background: "#f71bcb"
+                    height:400,width: "100%"
                 },
                 recycled:false
             }];
@@ -168,6 +169,8 @@
 
             return tmp
         })()
+//        console.log(imgs.length)
+
         var xscroll = new XScroll({
             renderTo: "#J_Scroll"
         });
@@ -215,5 +218,6 @@
 //    });
 
 </script>
+<script src="build/app.js"></script>
 </body>
 </html>
