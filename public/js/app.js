@@ -463,7 +463,7 @@ xscroll.render();
 var infinite = new Infinite({
     infiniteElements: "#J_Scroll .xs-row",
     renderHook: function (el, row) {
-        console.log(el, row);
+        //console.log(el, row);
         if (row.recycled) {
             React.render(
                 <Player avatar={row.data.avatar} name={row.data.name} platform={row.data.platform} players={row.data.players} slogan={row.data.slogan} />, el
